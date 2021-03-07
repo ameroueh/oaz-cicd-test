@@ -1,4 +1,4 @@
-name: pyoaz
+name: hello
 on: 
   push:
     branches: [main]
