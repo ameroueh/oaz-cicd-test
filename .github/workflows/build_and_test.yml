@@ -1,0 +1,13 @@
+name: pyoaz
+on: 
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    container: ghcr.io/ameroueh/oaz-cpu:latest
+    steps:
+      - run: |
+              echo "Hello!"
+        name: hello
