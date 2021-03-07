@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/ameroueh/oaz-cicd-test:latest 
-      options: --user 1000
+      options: --user 1001
     steps:
       - uses: actions/checkout@v2
       - run: |
