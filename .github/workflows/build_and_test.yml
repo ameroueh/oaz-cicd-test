@@ -2,12 +2,14 @@ name: hello
 on: 
   push:
     branches: [main]
-  pull_request:
 jobs:
   hello:
     runs-on: ubuntu-latest
-    container: ghcr.io/ameroueh/oaz-cpu:latest
+    container:
+      image: ghcr.io/ameroueh/oaz-cicd-test:latest 
+      options: --user 1000
     steps:
+      - uses: actions/checkout@v2
       - run: |
               echo "Hello!"
         name: hello
