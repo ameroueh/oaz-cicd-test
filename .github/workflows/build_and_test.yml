@@ -17,4 +17,5 @@ jobs:
               echo "Conda prefix is $CONDA_PREFIX"
               echo "UID is $UID"
               echo "EUID is $EUID"
+              ls /home/oaz
         name: hello
