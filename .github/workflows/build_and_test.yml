@@ -13,8 +13,8 @@ jobs:
       - run: |
               echo "Hello!"
               echo "Working directory is `pwd`"
-              echo "Conda env is $CONDA_DEFAULT_ENV"
-              echo "Conda prefix is $CONDA_PREFIX"
+              conda activate oaz && echo "Conda env is $CONDA_DEFAULT_ENV"
+              conda activate oaz && echo "Conda prefix is $CONDA_PREFIX"
               echo "UID is $UID"
               echo "EUID is $EUID"
               ls /home/oaz
