@@ -15,4 +15,6 @@ jobs:
               echo "Working directory is `pwd`"
               echo "Conda env is $CONDA_DEFAULT_ENV"
               echo "Conda prefix is $CONDA_PREFIX"
+              echo "UID is $UID"
+              echo "EUID is $EUID"
         name: hello
