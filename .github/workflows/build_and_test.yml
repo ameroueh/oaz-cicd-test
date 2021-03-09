@@ -1,4 +1,4 @@
-name: hello
+ame: hello
 on: 
   push:
     branches: [main]
@@ -11,10 +11,8 @@ jobs:
     steps:
       # - uses: actions/checkout@v2
       - run: |
-              echo "Hello!"
-              echo "Working directory is `pwd`"
               echo "Shell is $0"
-              echo "Conda env is $CONDA_DEFAULT_ENV"
+              source /home/oaz/.bashrc && conda activae oaz && echo "Conda env is $CONDA_DEFAULT_ENV"
               echo "Conda prefix is $CONDA_PREFIX"
               echo "UID is $UID"
               echo "EUID is $EUID"
