@@ -15,6 +15,7 @@ jobs:
               echo "Working directory is `pwd`"
               # conda init bash
               . /home/oaz/.bashrc
+              conda activate oaz
               echo "Conda env is $CONDA_DEFAULT_ENV"
               echo "Conda prefix is $CONDA_PREFIX"
               echo "UID is $UID"
