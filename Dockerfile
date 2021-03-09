@@ -29,15 +29,15 @@ RUN ./miniconda.sh -b -p $CONDA_DIR
 RUN rm miniconda.sh
 
 ENV PATH=$CONDA_DIR/bin:$PATH
-RUN echo ". $CONDA_DIR/etc/profile.d/conda.sh" >> ~/.profile
+RUN echo ". $CONDA_DIR/etc/profile.d/conda.sh" >> /home/oaz/.profile
 RUN conda init bash
 
 RUN conda create --name oaz python=3.6
-RUN echo "conda activate oaz" >> ~/.bashrc
+RUN echo "conda activate oaz" >> /home/oaz/.bashrc
 
 # Set-up entrypoint
 RUN echo $'#!/bin/bash \n\
-if [[ $EUID -ne 0 ]]; then \n\
+if [[ $(id -u) -ne 0 ]]; then \n\
 	__conda_setup="$($CONDA_DIR/bin/conda shell.bash hook 2> /dev/null)" \n\
 	eval "$__conda_setup" \n\
 	conda activate oaz\n\
