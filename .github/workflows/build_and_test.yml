@@ -21,3 +21,4 @@ jobs:
               echo "EUID is $EUID"
               ls /home/oaz
         name: hello
+        shell: bash
