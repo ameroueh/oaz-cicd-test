@@ -11,6 +11,7 @@ jobs:
     steps:
       # - uses: actions/checkout@v2
       - run: |
+              echo $PATH
               echo "Shell is $0"
               source /home/oaz/.bashrc && conda activate oaz && echo "Conda env is $CONDA_DEFAULT_ENV"
               echo "Conda prefix is $CONDA_PREFIX"
