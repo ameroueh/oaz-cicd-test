@@ -35,16 +35,5 @@ RUN conda init bash
 RUN conda create --name oaz python=3.6
 RUN echo "conda activate oaz" >> /home/oaz/.bashrc
 
-# Set-up entrypoint
-RUN echo $'#!/bin/bash \n\
-if [[ $(id -u) -ne 0 ]]; then \n\
-	__conda_setup="$($CONDA_DIR/bin/conda shell.bash hook 2> /dev/null)" \n\
-	eval "$__conda_setup" \n\
-	conda activate oaz\n\
-fi \n\
-exec "$@"' >> /home/oaz/entrypoint.sh && chmod +x /home/oaz/entrypoint.sh
-SHELL ["/home/oaz/entrypoint.sh", "/bin/bash", "-c"]
-ENTRYPOINT ["/home/oaz/entrypoint.sh"]
-
 USER oaz
 WORKDIR /home/oaz
