@@ -12,7 +12,7 @@ jobs:
       # - uses: actions/checkout@v2
       - run: |
               echo "Shell is $0"
-              source /home/oaz/.bashrc && conda activae oaz && echo "Conda env is $CONDA_DEFAULT_ENV"
+              source /home/oaz/.bashrc && conda activate oaz && echo "Conda env is $CONDA_DEFAULT_ENV"
               echo "Conda prefix is $CONDA_PREFIX"
               echo "UID is $UID"
               echo "EUID is $EUID"
