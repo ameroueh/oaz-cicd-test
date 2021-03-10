@@ -11,12 +11,9 @@ jobs:
     steps:
       # - uses: actions/checkout@v2
       - run: |
-              conda init bash 
-        shell: bash
-      - run: |
               echo $PATH
               echo "Shell is $0"
-              conda source /home/oaz/.bashrc && conda activate oaz && echo "Conda env is $CONDA_DEFAULT_ENV"
+              conda init bash && source ~/.bashrc && conda source /home/oaz/.bashrc && conda activate oaz && echo "Conda env is $CONDA_DEFAULT_ENV"
               echo "Conda prefix is $CONDA_PREFIX"
               echo "UID is $UID"
               echo "EUID is $EUID"
